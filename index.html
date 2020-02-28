@@ -59,6 +59,7 @@
 <canvas id="canvas" width="1920" height="856"></canvas>
 <script src="js/ct1.js"></script>
 <script src="js/ct2.js"></script>
+<script src="js/base.js"></script>
 <script>
 
 			// var screenWidth = document.body.offsetWidth;
@@ -206,7 +207,10 @@ else if (location.search.indexOf('?') > -1) {
 // var href = location.hostname + '/th-' + randomString(6) + '/';
 var href = '/th-' + randomString(6) + '/';
 if (agent != null) {
-  var url = GetRequest().code
+  var result = GetRequest().code
+  var base = new Base64();  
+  var url = base.encode(result); 
+    //base.decode(url)  解密
   var param = GetRequest().agent
   var href_1 = href + '?agent=' + param;
   href = url + href_1
