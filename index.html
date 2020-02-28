@@ -209,13 +209,13 @@ if (agent != null) {
   var url = GetRequest().code;
   var param = GetRequest().agent
   var href_1 = href + '?agent=' + param;
-  href = 'http:'+url + href_1
+  href = url + href_1
 }
 
 (function () {
     var btn = document.getElementById('btn');
     btn.style.display = 'block';
-    btn.href = '//' + href;
+    btn.href = 'http://' + href;
 })();
 		</script>
 </body>
